@@ -1,0 +1,16 @@
+[Unit]
+Description=Module5 Mongo API
+After=network.target
+
+[Service]
+Environment=PORT=3000
+# replace with your Atlas URI (URL-encoded password if needed)
+Environment=MONGODB_URI=mongodb+srv://kavishchoudhary1935:kavish193@cluster0.xxxxx.mongodb.net/weatherdb?retryWrites=true&w=majority
+WorkingDirectory=/home/ubuntu/module5-mongo-api
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=5
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
